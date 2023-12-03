@@ -1,9 +1,16 @@
 // Se importan los módulos necesarios
 const express = require("express");
 const Post = require("../models/Post");
-
+const mongoose = require("mongoose");
 // Se crea un nuevo router
 const router = express.Router();
+
+// Agregar ruta para traer todos los records
+// Get a list of 50 posts
+router.get("/", async (req, res) => {
+  let collection = await Post.find();
+  res.send(collection).status(200);
+});
 
 // Se define una ruta POST para crear nuevos posts
 router.post("/", async (req, res) => {
