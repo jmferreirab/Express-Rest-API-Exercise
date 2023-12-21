@@ -24,13 +24,13 @@ app.get("/", (req, res) => {
 
 // Indicar al servidor que escuche en el puerto especificado
 app.listen(port, () => {
-  console.log(`App listening on port http://localhost:${port}`);
+  console.log(`La aplicación fue lanzada en: http://localhost:${port}`);
 });
 
-const user = "***REMOVED***";
-const password = "***REMOVED***";
-const database_name = "***REMOVED***";
-const host = "***REMOVED***";
+const user = process.env.DB_USER;
+const password = process.env.DB_PASSWORD;
+const database_name = process.env.DB_NAME;
+const host = process.env.DB_HOST;
 const uri = `mongodb+srv://${user}:${password}@${host}/${database_name}\
 ?retryWrites=true&w=majority`;
 

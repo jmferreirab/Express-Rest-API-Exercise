@@ -4,7 +4,8 @@
   "description": "API developed with node and express",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon app.js"
+    "dev": "SET NODE_ENV=dev && node --env-file=prod.env --watch app.js",
+    "start": "SET NODE_ENV=prod && node --env-file=prod.env --watch app.js"
   },
   "author": "jmferreirab",
   "license": "ISC",
